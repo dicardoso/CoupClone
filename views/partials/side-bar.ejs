@@ -1,0 +1,48 @@
+<ul class="list-group" data-bind="foreach: state.players">
+    <li class="list-group-item" data-bind="css: { 'current-player' : $index() == $root.state.state.playerIdx() }">
+        <div class="row" data-bind="visible: $root.waitingToPlay">
+            <div class="col-xs-6">
+                <span data-bind="text: name, css: { 'dead-player' : isReady() == 'observe' }"></span>
+                <span class="glyphicon glyphicon-eye-open observer" data-bind="visible: isReady() == 'observe'"></span>
+            </div>
+            <div class="col-xs-6">
+                <span class="badge" data-bind="text: (isReady() ? 'ready' : 'not ready')"></span>
+            </div>
+        </div>
+        <div class="row" data-bind="visible: !$root.waitingToPlay()">
+            <div class="col-xs-6">
+                <span data-bind="text: name, css: { 'dead-player' : influenceCount() == 0 }"></span>
+                <span class="badge" data-bind="text: '$' + cash(), visible: !isObserver()"></span>
+                <span class="glyphicon glyphicon-eye-open observer" data-bind="visible: isObserver()"></span>
+            </div>
+            <div class="col-xs-6">
+                <!-- ko foreach: influence -->
+                    <span class="label" data-bind="text: role, css: labelClass(role(), revealed()), tooltip: { title: roleDescription(role()), trigger: 'hover', placement: 'right' }"></span><br/>
+                <!-- /ko -->
+            </div>
+        </div>
+    </li>
+</ul>
+<ul class="list-group">
+    <li class="list-group-item">
+        <a href="javascript: null" data-bind="event: {vclick: showChat}, visible: sidebar() != 'chat'">Chat</a>
+        <div data-bind="visible: sidebar() == 'chat'">
+            <div class="chat"></div>
+            <textarea class="form-control" rows="2" placeholder="Chat message"></textarea>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <a href="javascript: null" data-bind="event: {vclick: showCheatSheet}, visible: sidebar() != 'cheat'">Cheat sheet</a>
+        <div data-bind="visible: sidebar() == 'cheat'">
+            <!-- ko foreach: state.roles -->
+                <p><span class="label" data-bind="text: $data, css: labelClass($data)"></span> <span data-bind="text: roleDescription($data)"></span></p>
+            <!-- /ko -->
+            <!-- ko if: state.roles().length === 0 -->
+            <p>Not available until the game starts</p>
+            <!-- /ko -->
+        </div>
+    </li>
+</ul>
+<p><a href="rules.html" target="blank">How to play</a></p>
+<p><a href="" data-bind="click: leaveGame">Leave game</a></p>
+<p><a href="javascript:;" data-bind="visible: notifsSupported, text: notifToggleText, click: toggleNotifs"></a></p>

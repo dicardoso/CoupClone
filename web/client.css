@@ -1,0 +1,245 @@
+@font-face {
+    font-family: XoloniumRegular;
+    src: url('XoloniumRegular.otf') format('opentype');
+}
+body, p, .tooltip {
+   font-family: XoloniumRegular;
+}
+@font-face {
+    font-family: icomoon;
+    src: url('icomoon.woff');
+}
+i {
+    font-family: icomoon;
+    font-size: 25px;
+    font-style: normal;
+    vertical-align: middle;
+}
+i.coup:before {
+    content: "\e601";
+}
+i.assassinate:before {
+    content: "\e602";
+}
+i.tax:before {
+    content: "\e603";
+}
+i.steal:before {
+    content: "\e605";
+}
+i.exchange:before {
+    content: "\e600";
+}
+i.interrogate:before {
+    content: "\e900";
+}
+i.income:before {
+    content: "\e606";
+}
+i.foreign-aid:before {
+    content: "\e607";
+}
+i.successful-challenge:before {
+    content: "\e608";
+}
+i.incorrect-challenge:before {
+    content: "\e609";
+}
+i.block:before {
+    content: "\e604";
+}
+i.player-died:before {
+    content: "\e60a";
+}
+i.player-won:before {
+    content: "\e60b";
+}
+i.challenge:before {
+    content: "\e60c";
+}
+i.allow:before {
+    content: "\ea10";
+}
+i.user:before {
+    content: "\e971";
+}
+body {
+    padding-top: 15px;
+}
+div.activity {
+    overflow-y: scroll;
+}
+div.hidden {
+    display: none;
+}
+div.chat {
+    height: 200px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+.label-revealed {
+    background-color: #aaa;
+}
+.label-unknown {
+    color: #444;
+    background: white;
+    border: 1px solid #444;
+}
+.btn-action {
+    border-color: #ccc;
+    background: white;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.btn {
+    margin-top: 5px;
+}
+.btn-action:focus {
+    border-color: #ccc;
+}
+.btn-success {
+    background: #5cb85c;
+}
+.btn-action:disabled {
+    color: #888;
+    background: white;
+    opacity: inherit;
+}
+.btn-action:disabled:hover {
+    color: #888;
+}
+.label-duke, .btn-duke, .btn-duke:focus, .btn-tax, .btn-tax:focus {
+    background-color: hsl(280, 60%, 50%);
+}
+.label-assassin, .btn-assassin, .btn-assassin:focus, .btn-assassinate, .btn-assassinate:focus {
+    background-color: hsl(0, 0%, 20%);
+}
+.label-contessa, .btn-contessa, .btn-contessa:focus {
+    background-color: hsl(359, 60%, 50%);
+}
+.label-ambassador, .btn-ambassador, .btn-ambassador:focus, .btn-exchange, .btn-exchange:focus {
+    background-color: hsl(80, 60%, 45%);
+}
+.label-inquisitor, .btn-inquisitor, .btn-inquisitor:focus, .btn-interrogate, .btn-interrogate:focus {
+    background-color: hsl(55, 60%, 45%);
+}
+.label-captain, .btn-captain, .btn-captain:focus, .btn-steal, .btn-steal:focus {
+    background-color: hsl(195, 60%, 50%);
+}
+.btn-default, .btn-default:focus {
+    background-color: white;
+    color: #333;
+}
+.btn-duke, .btn-tax, .btn-assassin, .btn-assassinate, .btn-contessa, .btn-ambassador, .btn-exchange, .btn-inquisitor, .btn-interrogate, .btn-captain, .btn-steal {
+    color: white;
+    opacity: 0.8;
+}
+.btn-duke:hover, .btn-tax:hover, .btn-assassin:hover, .btn-assassinate:hover, .btn-contessa:hover, .btn-ambassador:hover, .btn-exchange:hover, .btn-inquisitor:hover, .btn-interrogate:hover, .btn-captain:hover, .btn-steal:hover {
+    opacity: 1.0;
+    color: white;
+}
+.btn-duke:focus, .btn-tax:focus, .btn-assassin:focus, .btn-assassinate:focus, .btn-contessa:focus, .btn-ambassador:focus, .btn-exchange:focus, .btn-inquisitor:focus, .btn-interrogate:focus, .btn-captain:focus, .btn-steal:focus {
+    color: white;
+}
+.hist-steal {
+    border-left: 5px solid hsl(195, 60%, 50%);
+}
+.hist-tax {
+    border-left: 5px solid hsl(280, 60%, 50%);
+}
+.hist-assassinate {
+    border-left: 5px solid hsl(0, 0%, 20%);
+}
+.hist-exchange {
+    border-left: 5px solid hsl(80, 60%, 45%);
+}
+.hist-interrogate {
+    border-left: 5px solid hsl(55, 60%, 45%);
+}
+.current-player {
+    border-left: 5px solid black;
+}
+.dead-player {
+    color: #aaa;
+}
+.history-group {
+    padding: 0;
+}
+.history-group-item {
+    list-style-type: none;
+    padding-left: 20px
+}
+.history-group-item:first-child {
+    padding-left: 0
+}
+.action-bar {
+    font-size: larger;
+    box-shadow: 0px 0px 10px 0px #888;
+    padding: 10px 15px;
+    margin: 5px 0px;
+}
+.banner {
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    width: 100%;
+    background: #fdd;
+    text-align: center;
+}
+.feedback {
+    vertical-align: 5px;
+}
+.name-input {
+    width: 160px;
+}
+.games-list-container {
+    max-height: 290px;
+    overflow-y: auto;
+}
+.global-chat {
+    height: 250px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+.global-chat-users {
+    height: 250px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+.game-name-highlight:focus, .game-name-highlight:hover {
+    color: #23527c;
+    text-decoration: underline;
+}
+.game-name-highlight {
+    color: #3b94d9;
+    cursor: pointer;
+}
+.join-buttons {
+    width: 150px;
+}
+.join-buttons button:first-child {
+    width: 120px;
+}
+.observer {
+    color: #aaa;
+    margin-left: 3px;
+    font-size: larger;
+}
+.profile-button {
+    text-align: right;
+}
+.profile-button a {
+    text-decoration: none;
+}
+.profile-button a:hover {
+    text-decoration: none;
+}
+h3 {
+    margin-top: 0;
+}
+.error {
+    color: red;
+}
