@@ -103,7 +103,7 @@ module.exports = function createGame(options) {
         playerIfaces.push(playerIface);
         state.numPlayers++;
 
-        addHistory('player-joined', nextAdhocHistGroup(), playerState.name + ' joined the game' + (isObserver ? ' as an observer' : ''));
+        addHistory('player-joined', nextAdhocHistGroup(), playerState.name + ' entrou no jogo' + (isObserver ? ' as an observer' : ''));
         emitState();
 
         var proxy = createGameProxy(playerIdx);
@@ -627,15 +627,15 @@ module.exports = function createGame(options) {
             } else {
                 debug('checking for blocks/challenges');
                 if (command.action == 'steal') {
-                    message = format('{%d} attempted to steal from {%d}', playerIdx, command.target);
+                    message = format('{%d} tentou roubar de {%d}', playerIdx, command.target);
                 } else if (command.action == 'assassinate') {
-                    message = format('{%d} attempted to assassinate {%d}', playerIdx, command.target);
+                    message = format('{%d} tentou assassinar {%d}', playerIdx, command.target);
                 } else if (command.action == 'exchange') {
-                    message = format('{%d} attempted to exchange', playerIdx);
+                    message = format('{%d} tentou trocar', playerIdx);
                 } else if (command.action == 'interrogate') {
-                    message = format('{%d} attempted to interrogate {%d}', playerIdx, command.target);
+                    message = format('{%d} tentou interrogar {%d}', playerIdx, command.target);
                 } else {
-                    message = format('{%d} attempted to draw %s', playerIdx, command.action);
+                    message = format('{%d} tentou pegar %s', playerIdx, command.action);
                 }
                 setState({
                     name: stateNames.ACTION_RESPONSE,
@@ -742,7 +742,7 @@ module.exports = function createGame(options) {
                 action: state.state.action,
                 target: playerIdx,
                 blockingRole: command.blockingRole,
-                message: format('{%d} attempted to block with ' + command.blockingRole, playerIdx)
+                message: format('{%d} tentou bloquear com ' + command.blockingRole, playerIdx)
             });
             resetAllows(playerIdx);
 

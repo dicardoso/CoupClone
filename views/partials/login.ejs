@@ -3,21 +3,21 @@
     <div class="col-sm-4">
         <!-- ko if: !needName() -->
         <form data-bind="submit: enter">
-            <p><input class="name-input" type="text" placeholder="Name" data-bind="textInput: playerName" maxlength="30"/></p>
-            <p><button class="btn btn-default" type="submit" data-bind="enable: playerName() && !disableSubmitButton(), text: disableSubmitButton() ? 'Loading...' : 'Enter the arena'">Enter the arena</button></p>
+            <p><input class="name-input" type="text" placeholder="Nome" data-bind="textInput: playerName" maxlength="30"/></p>
+            <p><button class="btn btn-default" type="submit" data-bind="enable: playerName() && !disableSubmitButton(), text: disableSubmitButton() ? 'Loading...' : 'Entrar na arena'">Entrar na sala</button></p>
         </form>
         <!-- /ko -->
         <!-- ko if: needName() -->
-        <p>Please enter a name to be able to join <span data-bind="text: currentGame()"></span></p>
+        <p>Entre com um nome válido para jogar <span data-bind="text: currentGame()"></span></p>
         <form data-bind="submit: join.bind(null, null, null, currentGame())">
-            <p><input class="name-input" type="text" placeholder="Name" data-bind="textInput: playerName" maxlength="30"/></p>
-            <p><button class="btn btn-default" type="submit" data-bind="enable: playerName">Join game</button></p>
+            <p><input class="name-input" type="text" placeholder="Nome" data-bind="textInput: playerName" maxlength="30"/></p>
+            <p><button class="btn btn-default" type="submit" data-bind="enable: playerName">Entrou no jogo</button></p>
         </form>
         <!-- /ko -->
-        <p><a href="rules.html" target="blank">How to play</a></p>
+        <p><a href="rules.html" target="blank">Como jogar</a></p>
         <p><a href="https://twitter.com/intent/tweet?screen_name=chrsbrn" class="twitter-mention-button" data-related="chrsbrn">Tweet to @chrsbrn</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-<span class="feedback">to send feedback</span><p>
+<span class="feedback">para enviar feedback</span><p>
         <div>
             <a class="twitter-timeline" href="https://twitter.com/hashtag/treasoncoup" data-widget-id="701469749927133184">#treasoncoup Tweets</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -30,8 +30,8 @@
                 <thead>
                     <tr>
                         <th>Rank</th>
-                        <th>Player</th>
-                        <th>Wins</th>
+                        <th>Jogadores</th>
+                        <th>Vitórias</th>
                     </tr>
                 </thead>
                 <tbody>

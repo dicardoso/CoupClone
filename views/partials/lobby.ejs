@@ -2,13 +2,13 @@
     <div class="col-sm-3">
         <br/>
         <div class="btn-group join-buttons">
-            <button type="button" class="btn btn-primary" data-bind="click: join">Quick Play</button>
+            <button type="button" class="btn btn-primary" data-bind="click: join">Jogo Rápido</button>
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="" data-bind="click: create.bind(null, null, null, true)">Create Game</a></li>
-                <li><a href="" data-toggle="modal" data-target="#newGameModal">Create Private Game</a></li>
+                <li><a href="" data-bind="click: create.bind(null, null, null, true)">Criar Jogo</a></li>
+                <li><a href="" data-toggle="modal" data-target="#newGameModal">Criar partida privada</a></li>
             </ul>
         </div>
         <br/>
@@ -20,16 +20,16 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Game</th>
+                        <th>Jogo</th>
                         <th>Status</th>
-                        <th>Mode</th>
-                        <th>Password</th>
+                        <th>Modo</th>
+                        <th>Senha</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- ko if: games().length == 0-->
                     <tr>
-                        <td colspan="4">No games in progress.</td>
+                        <td colspan="4">Nenhum jogo em progresso.</td>
                     </tr>
                     <!-- /ko -->
                     <!-- ko foreach: games() -->
@@ -64,7 +64,7 @@
                     <table class="table table-condensed">
                         <thead>
                             <tr>
-                                <th>Players Online: <span data-bind="text: players().length"></span></th>
+                                <th>Jogadores Online: <span data-bind="text: players().length"></span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -80,7 +80,7 @@
 
             <div>
                 <form data-bind="submit: sendGlobalMessage">
-                    <input placeholder="Global chat message" type="text" class="form-control" data-bind='value: globalMessage, valueUpdate: "afterkeydown"' />
+                    <input placeholder="Mensagens do chat global" type="text" class="form-control" data-bind='value: globalMessage, valueUpdate: "afterkeydown"' />
                 </form>
             </div>
         </div>
@@ -94,8 +94,8 @@
                 <thead>
                     <tr>
                         <th>Rank</th>
-                        <th>Player</th>
-                        <th>Wins</th>
+                        <th>Jogadores</th>
+                        <th>Vitórias</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -116,7 +116,7 @@
     <div class="col-sm-4">
         <p><a href="https://twitter.com/intent/tweet?screen_name=chrsbrn" class="twitter-mention-button" data-related="chrsbrn">Tweet to @chrsbrn</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <span class="feedback">to send feedback</span><p>
+            <span class="feedback">para enviar feedback</span><p>
         <div>
             <a class="twitter-timeline" href="https://twitter.com/hashtag/treasoncoup" data-widget-id="701469749927133184">#treasoncoup Tweets</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

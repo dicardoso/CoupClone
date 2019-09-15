@@ -219,13 +219,13 @@ GameTracker.prototype.decodeInfluence = function (influenceCode) {
 
 GameTracker.prototype.decodeRole = function (roleCode) {
     if (roleCode === 1) {
-        return 'duke';
+        return 'duque';
     }
     else if (roleCode === 2) {
-        return 'captain';
+        return 'captão';
     }
     else if (roleCode === 3) {
-        return 'assassin';
+        return 'assassino';
     }
     else if (roleCode === 4) {
         return this.gameInfo.roles.indexOf('ambassador') >= 0 ? 'ambassador' : 'inquisitor';

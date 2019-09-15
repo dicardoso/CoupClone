@@ -28,21 +28,21 @@
         <a href="javascript: null" data-bind="event: {vclick: showChat}, visible: sidebar() != 'chat'">Chat</a>
         <div data-bind="visible: sidebar() == 'chat'">
             <div class="chat"></div>
-            <textarea class="form-control" rows="2" placeholder="Chat message"></textarea>
+            <textarea class="form-control" rows="2" placeholder="Mensagem do chat"></textarea>
         </div>
     </li>
     <li class="list-group-item">
-        <a href="javascript: null" data-bind="event: {vclick: showCheatSheet}, visible: sidebar() != 'cheat'">Cheat sheet</a>
+        <a href="javascript: null" data-bind="event: {vclick: showCheatSheet}, visible: sidebar() != 'cheat'">Regras</a>
         <div data-bind="visible: sidebar() == 'cheat'">
             <!-- ko foreach: state.roles -->
                 <p><span class="label" data-bind="text: $data, css: labelClass($data)"></span> <span data-bind="text: roleDescription($data)"></span></p>
             <!-- /ko -->
             <!-- ko if: state.roles().length === 0 -->
-            <p>Not available until the game starts</p>
+            <p>Não disponível enquanto a partida não inicia</p>
             <!-- /ko -->
         </div>
     </li>
 </ul>
-<p><a href="rules.html" target="blank">How to play</a></p>
-<p><a href="" data-bind="click: leaveGame">Leave game</a></p>
+<p><a href="rules.html" target="blank">Como jogar</a></p>
+<p><a href="" data-bind="click: leaveGame">Abandonar jogo</a></p>
 <p><a href="javascript:;" data-bind="visible: notifsSupported, text: notifToggleText, click: toggleNotifs"></a></p>
