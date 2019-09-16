@@ -266,11 +266,11 @@ socket.on('history', function (data) {
 socket.on('chat', function (data) {
     var from;
     if (data.from == vm.state.playerIdx()) {
-        from = 'You';
+        from = 'Você';
     } else {
         var player = vm.state.players()[data.from];
-        from = player ? player.name() : 'Unknown';
-        notifyPlayer(from + ' says: ' + data.message);
+        from = player ? player.name() : 'Desconhecido';
+        notifyPlayer(from + ' diz: ' + data.message);
     }
     var html = '<b>' + from + ':</b> ' + data.message + '<br/>';
     $('.chat').append(html);
@@ -692,7 +692,7 @@ function formatMessage(message) {
     for (var i = 0; i < vm.state.players().length; i++) {
         var playerName;
         if (i == vm.state.playerIdx()) {
-            playerName = 'you';
+            playerName = 'você';
         } else {
             var player = vm.state.players()[i];
             playerName = player ? player.name() : 'unknown';
@@ -725,7 +725,7 @@ function roleDescription(role) {
         return 'Draw one from the deck and exchange OR look at one opponent\'s role and optionally force an exchange';
     }
     if (role === 'assassin') {
-        return 'Pay $3 to reveal another player\'s influence; blocked by contessa';
+        return 'Pague $3 para revelar a influência\'s de outro jogador; blocked by contessa';
     }
     if (role === 'captain') {
         return 'Roube $2 de outro jogador; bloqueado pelo capitão e ' + getGameRole(['embaixador', 'inquisitor']);
@@ -837,22 +837,22 @@ function notifyPlayer(message) {
 }
 function notifyPlayerOfState() {
     if (weAreInState(states.START_OF_TURN)) {
-        notifyPlayer('Your turn');
+        notifyPlayer('Sua vez');
     }
     else if (weAreInState(states.EXCHANGE)) {
-        notifyPlayer('Choose the roles to keep');
+        notifyPlayer('Escolha os papéis a serem mantidos');
     }
     else if (weCanBlock() || weCanChallenge()) {
         notifyPlayer(stateMessage());
     }
     else if (weAreInState(states.EXCHANGE)) {
-        notifyPlayer('Choose the roles to keep');
+        notifyPlayer('Escolha os papéis a serem mantidos');
     }
     else if (weMustReveal()) {
-        notifyPlayer('You must reveal an influence');
+        notifyPlayer('Você deve revelar uma influência');
     }
     else if (weHaveWon()) {
-        notifyPlayer('You have won!');
+        notifyPlayer('Você ganhou!');
     }
     else if (theyHaveWon()) {
         notifyPlayer(winnerName() + ' has won!');

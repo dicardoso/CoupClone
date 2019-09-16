@@ -63,7 +63,7 @@ describe('History', function () {
 
                     it('Then the history should record that player0 stole from player1', function () {
                         return player0.getHistory().then(function (history) {
-                            expect(history).to.eql(['{0} stole from {1}']);
+                            expect(history).to.eql(['{0} roubou de {1}']);
                         });
                     });
                 });
@@ -89,7 +89,7 @@ describe('History', function () {
                         return player0.getHistory().then(function (history) {
                             expect(history).to.eql([
                                 '{0} attempted to steal from {1}',
-                                '{1} blocked with ambassador'
+                                '{1} bloqueado com embaixador'
                             ]);
                         });
                     });
@@ -115,7 +115,7 @@ describe('History', function () {
                         return player0.getHistory().then(function (history) {
                             expect(history).to.eql([
                                 '{0} attempted to steal from {1}',
-                                '{1} incorrectly challenged {0}; {0} exchanged captain for a new role; {1} revealed contessa'
+                                '{1} desafiou {0} incorretamente; {0} trocou o capitão por uma nova carta; {1} revelado condessa'
                             ]);
                         });
                     });
@@ -134,8 +134,8 @@ describe('History', function () {
                             return player0.getHistory().then(function (history) {
                                 expect(history).to.eql([
                                     '{0} attempted to steal from {1}',
-                                    '{1} incorrectly challenged {0}; {0} exchanged captain for a new role; {1} revealed contessa',
-                                    '{0} stole from {1}'
+                                    '{1} desafiou {0} incorretamente; {0} trocou o capitão por uma nova carta; {1} revelado condessa',
+                                    '{0} roubou de {1}'
                                 ]);
                             });
                         });
@@ -165,8 +165,8 @@ describe('History', function () {
                                 return player0.getHistory().then(function (history) {
                                     expect(history).to.eql([
                                         '{0} attempted to steal from {1}',
-                                        '{1} incorrectly challenged {0}; {0} exchanged captain for a new role; {1} revealed contessa',
-                                        '{1} blocked with ambassador'
+                                        '{1} desafiou {0} incorretamente; {0} trocou o capitão por uma nova carta; {1} revelado condessa',
+                                        '{1} bloqueado com embaixador'
                                     ]);
                                 });
                             });
@@ -192,9 +192,9 @@ describe('History', function () {
                                 return player0.getHistory().then(function (history) {
                                     expect(history).to.eql([
                                         '{0} attempted to steal from {1}',
-                                        '{1} incorrectly challenged {0}; {0} exchanged captain for a new role; {1} revealed contessa',
+                                        '{1} desafiou {0} incorretamente; {0} trocou o capitão por uma nova carta; {1} revelado condessa',
                                         '{1} attempted to block with ambassador',
-                                        '{0} incorrectly challenged {1}; {1} exchanged ambassador for a new role; {0} revealed contessa'
+                                        '{0} desafiou {1} incorretamente; {1} trocou o capitão por uma nova carta; {0} revelado condessa'
                                     ]);
                                 });
                             });
@@ -231,7 +231,8 @@ describe('History', function () {
                             expect(history).to.eql([
                                 '{0} attempted to steal from {1}',
                                 '{1} attempted to block with ambassador',
-                                '{0} incorrectly challenged {1}; {1} exchanged ambassador for a new role; {0} revealed contessa'
+                                '{0} desafiou {1} incorretamente; {1} trocou o embaixador por uma nova carta; {0} revelou condessa'
+                                
                             ]);
                         });
                     });
@@ -282,7 +283,7 @@ describe('History', function () {
                         player0.getHistory().then(function (history) {
                             expect(history).to.eql([
                                 '{0} attempted to steal from {1}',
-                                '{1} successfully challenged {0}; {0} revealed contessa'
+                                '{1} desafio bem sucedido {0}; {0} revelou a condessa'
                             ]);
                         })
                     });
@@ -317,8 +318,8 @@ describe('History', function () {
                             expect(history).to.eql([
                                 '{0} attempted to steal from {1}',
                                 '{1} attempted to block with ambassador',
-                                '{0} successfully challenged {1}; {1} revealed contessa',
-                                '{0} stole from {1}'
+                                '{0} desafio bem sucedido {1}; {1} revelou a condessa',
+                                '{0} roubou de {1}'
                             ]);
                         })
                     });
@@ -353,8 +354,8 @@ describe('History', function () {
                     return player0.getHistory().then(function (history) {
                         expect(history).to.eql([
                             '{0} attempted to assassinate {1}',
-                            '{1} incorrectly challenged {0}; {0} exchanged assassin for a new role; {1} revealed ambassador',
-                            '{1} suffered a humiliating defeat'
+                            '{1} desafiou incorretamente {0}; {0} trocou assassino por uma nova carta; {1} revelou embaixador',
+                            '{1} sofreu uma derrota humilhante'
                         ]);
                     });
                 });
@@ -389,9 +390,9 @@ describe('History', function () {
                     return player0.getHistory().then(function (history) {
                         expect(history).to.eql([
                             '{1} attempted to block with contessa',
-                            '{0} successfully challenged {1}; {1} revealed duke',
-                            '{0} assassinated {1}; {1} revealed duke',
-                            '{1} suffered a humiliating defeat'
+                            '{0} desafio bem sucedido {1}; {1} revelou o duque',
+                            '{0} assassinated {1}; {1} revelou o duque',
+                            '{1} sofreu uma derrota humilhante'
                         ]);
                     });
                 });
@@ -426,8 +427,8 @@ describe('History', function () {
                     return player0.getHistory().then(function (history) {
                         expect(history).to.eql([
                             '{1} attempted to block with contessa',
-                            '{0} successfully challenged {1}; {1} revealed duke',
-                            '{1} suffered a humiliating defeat'
+                            '{0} desafio bem sucedido {1}; {1} revelou o duque',
+                            '{1} sofreu uma derrota humilhante'
                         ]);
                     });
                 });
@@ -498,10 +499,10 @@ describe('History', function () {
                         player0.getHistory().then(function (history) {
                             expect(history).to.eql([
                                 '{0} attempted to steal from {1}',
-                                '{1} incorrectly challenged {0}; {0} exchanged captain for another role; {1} revealed contessa',
+                                '{1} desafio incorretamente {0}; {0} trocou o capitão por outra carta; {1} revelou condessa',
                                 '{1} attempted to block with ambassador',
-                                '{0} successfully challenged {1}; {1} revealed contessa',
-                                '{0} stole from {1}'
+                                '{0} desafio bem sucedido {1}; {1} revelou o condessa',
+                                '{0} roubou de {1}'
                             ]);
                         })
                     });

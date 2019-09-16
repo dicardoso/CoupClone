@@ -144,7 +144,7 @@ io.on('connection', function (socket) {
         var playerName = players[socket.playerId].playerName;
 
         var globalMessage =  timeStamp + playerName + ': ' + data;
-        var localMessage = timeStamp + ' You: ' + data;
+        var localMessage = timeStamp + ' Você: ' + data;
 
         socket.emit('globalchatmessage', localMessage);
         socket.broadcast.emit('globalchatmessage', globalMessage);
